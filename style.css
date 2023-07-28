@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 100vh;
+    background-color: #000;
+    background: url('./1690432683992.jpg');
+    background-size: cover;
+    background-position: center;
+}
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+a:hover{
+    color: orange; 
+}
+/*header*/
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar::before{
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar .links{ 
+    display: flex;
+    gap: 2rem;
+    margin: 20px 0;
+}
+.navbar .toggle_btn{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn{
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale  0.2 ease;
+
+}
+.action_btn:hover{
+    scale: 0.05;
+    color: white;
+}
+.action_btn:active{
+    scale: 0.95;
+}
+/*dropdown*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur (15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.dropdown_menu.open{
+    height: 240px;
+
+}
+.dropdown_menu li{
+    padding:0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    color: azure;
+    height: 5rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*home*/
+#home{
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+
+}
+
+#home h1{
+    margin: 1rem;
+}
+#home h1 span{
+    color: orange;
+}
+#home p{
+    color:rgb(247, 245, 243);
+    display: flex;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 5rem;
+    z-index: -1;
+}
+/*about*/
+#about{
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    background-color: rgb(81, 81, 73);
+}
+#about h1{
+    color: rgb(237, 230, 230);
+    margin: 60px;
+}
+.about{
+    display: flex;
+}
+
+.about p{
+    height: 1.2rem;
+    font-weight: bold;
+    color: orange;
+    margin: 20px;
+    justify-content: center;
+}
+.about img{
+    width: 350px;
+    height: 400px;
+    padding: 0px 30px ;
+    border-radius: 50px;
+}
+/*education*/
+#education{
+    display: flex;
+    flex-direction: column;
+    height: 850px;
+    background-color: gray;
+}
+#education h1{
+    margin: 60px;
+    color: azure;
+}
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: auto auto;
+    padding-left: 60px;
+}
+.box {
+    height: 150px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 0.5rem;
+    padding: 20px;
+    position: relative;
+}
+.box h2{
+    color: rgb(21, 22, 20);
+    size: 2rem;
+    margin-bottom: 40px;
+}
+.box p{
+    color: white;
+    font-size: 1.1rem;
+}
+/*contact*/
+#contact{
+    display: flex;
+    flex-direction: column;
+    height: 850px;
+    flex-direction: column;
+    padding: 5rem;
+}
+.contact{
+    height: 800px;
+    display: column;
+    gap: 5rem;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+.description{
+    height: 1.2rem;
+    font-weight: 5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: orange;
+    padding: 2rem;
+    word-spacing: 1rem;
+}
+
+
+/*responsive*/
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+    display: block;
+    }
+    .about {
+        display: inline-flex;
+    }
+    .box{
+        flex-direction: row;
+    }
+}
+@media(max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}

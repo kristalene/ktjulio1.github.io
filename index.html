@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>My Landing Page</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="#">My Page</a></div>
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a class="action_btn" href="./resume.pdf" download="Resume.pdf">Download CV</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+
+        <div class="dropdown_menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="action_btn">Download CV</a></li>
+        </div>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Hi, I'am <span>K</span>ristalene <span>J</span>ulio.</h1>
+            <h4>WEB DEVELOPER</h4>
+            <p>“Success is not final, failure is not fatal: it is the courage to continue that counts.” <br> — Winston S. Churchill</p>
+        </section>
+
+        <section id="about">
+            <h1 class="heading">About Me</h1>
+            <div class="about">
+                <img src="./1690432683992.jpg" alt="My Pic">
+                <div class="name">
+                    <h1>I'm Kristalene Julio.</h1>
+                    <p>A full-stack web developer. I can provide clean code and pixel perfrct design. I also make the website more interactive with web animations. A responsive design makes your website accessible to all users, regardless of their device.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h1 class="heading">Education</h1>
+            <div class="columns">
+                <div class="box">
+                    <h2>Bachelor in Medical Technology</h2>
+                    <p>PLT College Inc.</p>
+                    <p>2012-2016</p>
+                </div>
+                <div class="box">
+                    <h2>Bachelor in Medical Technology</h2>
+                    <p>Saint Louis University</p>
+                    <p>2011-2012</p>
+                </div>
+                <div class="box">
+                    <h2>Secondary Education</h2>
+                    <p>Saint Teresita's Academy</p>
+                    <p>2007-2011</p>
+                </div>
+                <div class="box">
+                    <h2>Primary Education</h2>
+                    <p>Darapidap Elementary School</p>
+                    <p>2001-2007</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1 class="heading">Contact</h1>
+            <div class="contact">
+                <p class="description">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Darapidap, Aritao, Nueva Vizcaya
+                </p>
+                <p class="description">
+                    <i class="fa-solid fa-phone"></i>
+                    +639558691672
+                </p>
+                <p class="description">
+                    <i class="fa-solid fa-envelope"></i>
+                    talenejulio23@gmail.com
+                </p>
+            </div>
+        </section>
+    </main>
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropdownmenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropdownmenu.classList.toggle('open')
+                const isOpen = dropdownmenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+            }
+        </script>
+</body>
+</html>
